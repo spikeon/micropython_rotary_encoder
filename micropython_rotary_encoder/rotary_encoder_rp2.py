@@ -4,8 +4,6 @@ from .rotary_encoder import RotaryEncoder
 
 
 class RotaryEncoderRP2(RotaryEncoder):
-    timer: Timer = None
-    alive: bool = True
 
     def __init__(
             self,
@@ -33,6 +31,8 @@ class RotaryEncoderRP2(RotaryEncoder):
             fast_ms=fast_ms,
             click_ms=click_ms,
         )
+        self.timer: Timer = None
+        self.alive: bool = True
 
         self._enable_irq()
 
